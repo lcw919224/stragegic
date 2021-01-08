@@ -1,6 +1,6 @@
 package com.stragegic.web.controller.user;
 
-import com.stragegic.result.Result;
+import com.stragegic.domain.core.result.Result;
 import com.stragegic.service.user.entity.UserInfo;
 import com.stragegic.service.user.service.UserInfoService;
 import io.swagger.annotations.Api;

@@ -1,4 +1,4 @@
-package com.stragegic.util;
+package com.stragegic.utils.bean;
 
 
 
@@ -10,11 +10,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
-
-/**
- * @author chaowei
- * 工具类
- * */
 
 public class BeanCopierUtils {
 

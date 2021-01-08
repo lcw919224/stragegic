@@ -1,0 +1,3 @@
+com\stragegic\service\user\mapper\UserInfoMapper.class
+com\stragegic\service\user\service\UserInfoService.class
+com\stragegic\service\user\entity\UserInfo.class

@@ -10,10 +10,10 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>strategic-common</module>
         <module>strategic-service</module>
         <module>strategic-start</module>
         <module>strategic-admin</module>
+        <module>strategic-conmon</module>
     </modules>
 
     <properties>

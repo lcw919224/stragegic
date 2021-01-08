@@ -1,4 +1,4 @@
-package com.stragegic.result;
+package com.stragegic.domain.core.result;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
@@ -12,8 +12,8 @@ public class Result<T> implements Serializable {
     private String msg = "ok";
     private T data;
 
-    public static <T> Result<T> ok(T data) {
-        Result<T> result = new Result<>();
+    public static <T>Result<T> ok(T data) {
+       Result<T> result = new Result<>();
         result.setData(data);
         return result;
     }
@@ -23,7 +23,7 @@ public class Result<T> implements Serializable {
     }
 
     public static Result error(String message, int code) {
-        Result result = new Result();
+     Result result = new Result();
         result.setMsg(message);
         result.setCode(code);
         return result;
