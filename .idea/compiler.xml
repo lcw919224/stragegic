@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="strategic-admin" />
+        <module name="strategic-common" />
+        <module name="strategic-service" />
+        <module name="strategic-start" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="strategic-admin" options="" />
+      <module name="strategic-common" options="" />
+      <module name="strategic-service" options="" />
+      <module name="strategic-start" options="" />
+    </option>
+  </component>
+</project>
