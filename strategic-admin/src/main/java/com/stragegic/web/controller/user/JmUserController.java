@@ -1,6 +1,8 @@
 package com.stragegic.web.controller.user;
 
 import com.stragegic.domain.core.result.Result;
+import com.stragegic.jm.entity.SlaveSUser;
+import com.stragegic.jm.service.SlaveUserInfoService;
 import com.stragegic.service.user.entity.SUser;
 import com.stragegic.service.user.service.UserInfoService;
 import io.swagger.annotations.Api;
@@ -18,18 +20,18 @@ import java.util.List;
  * <p>用户模块控制器</p>
  */
 
-@Api(tags = "用户模块")
+@Api(tags = "几米用户模块")
 @RestController
-@RequestMapping("/api/user")
-public class UserController {
+@RequestMapping("/api/jmuser")
+public class JmUserController {
 
     @Autowired
-    private UserInfoService userInfoService;
+    private SlaveUserInfoService userInfoService;
 
     @PostMapping("/selectAll")
     @ApiOperation(value = "查询所有用户")
-    public Result< List<SUser>> selectAll() {
-        List<SUser> sUsers = userInfoService.selectAll();
+    public Result<List<SlaveSUser>> selectAll() {
+        List<SlaveSUser> sUsers = userInfoService.selectAll();
         return Result.ok(sUsers);
     }
 
