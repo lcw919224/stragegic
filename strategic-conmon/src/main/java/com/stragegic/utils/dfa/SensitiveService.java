@@ -1,4 +1,4 @@
-package com.stragegic.dfa;
+package com.stragegic.utils.dfa;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;
