@@ -1,6 +1,5 @@
 package com.stragegic.service.user.cmapper;
 
-import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;
 import tk.mybatis.mapper.annotation.RegisterMapper;
 
@@ -25,13 +24,5 @@ public interface HsqldbMapper<T> {
     @SelectProvider(type = HsqldbProvider.class, method = "dynamicSQL")
     List<T> selectAlls();
 
-
-    /**
-     * 通过id查询
-     *
-     * @return
-     */
-    @SelectProvider(type = HsqldbProvider.class, method = "dynamicSQL")
-    List<T> getById(@Param("ids") String ids);
 }
 

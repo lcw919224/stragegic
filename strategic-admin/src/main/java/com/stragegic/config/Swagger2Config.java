@@ -43,9 +43,9 @@ public class Swagger2Config {
         // 用ApiInfoBuilder进行定制
         return new ApiInfoBuilder()
                 // 设置标题
-                .title("若依管理系统_接口文档")
+                .title("mall")
                 // 作者信息
-                .contact(new Contact("susuwan", null, null))
+                .contact(new Contact("测试",null,"1575426438@qq.com"))
                 // 版本
                 .version("版本号:1.0")
                 .build();

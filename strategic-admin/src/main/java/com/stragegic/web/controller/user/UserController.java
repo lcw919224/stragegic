@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-
 /**
  * @author 15754
  * <p>用户模块控制器</p>
@@ -28,10 +27,15 @@ public class UserController {
 
     @PostMapping("/selectAll")
     @ApiOperation(value = "查询所有用户")
-    public Result< List<SUser>> selectAll() {
+    public Result<List<SUser>> selectAll() {
         List<SUser> sUsers = userInfoService.selectAll();
         return Result.ok(sUsers);
     }
 
+    @PostMapping("/demo")
+    @ApiOperation(value = "测试")
+    public void  demo() {
+        System.out.println();
+    }
 
 }

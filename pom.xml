@@ -36,6 +36,8 @@
         <poi.version>3.17</poi.version>
         <velocity.version>1.7</velocity.version>
         <jwt.version>0.9.0</jwt.version>
+        <knife4j.version>2.0.2</knife4j.version>
+        <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -79,35 +81,10 @@
             </dependency>
 
 
-            <!-- swagger2-->
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${swagger.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>io.swagger</groupId>
-                        <artifactId>swagger-annotations</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>io.swagger</groupId>
-                        <artifactId>swagger-models</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-
-            <!-- swagger2-UI-->
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${swagger.version}</version>
-            </dependency>
-
-            <!-- 这里使用 swagger-bootstrap-ui ，拯救处女座~ -->
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
-                <artifactId>swagger-bootstrap-ui</artifactId>
-                <version>1.9.3</version>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
             </dependency>
 
             <!--io常用工具类 -->
@@ -124,12 +101,6 @@
                 <version>${commons.fileupload.version}</version>
             </dependency>
 
-            <!-- excel工具 -->
-            <dependency>
-                <groupId>org.apache.poi</groupId>
-                <artifactId>poi-ooxml</artifactId>
-                <version>${poi.version}</version>
-            </dependency>
 
             <!--velocity代码生成使用模板 -->
             <dependency>
@@ -162,6 +133,31 @@
                 <artifactId>slf4j-nop</artifactId>
                 <version>1.7.2</version>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.30</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>5.3.8</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+
+            <!-- excel工具 -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 

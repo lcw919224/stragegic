@@ -1,6 +1,7 @@
 package com.stragegic.service.user.cmapper;
 
 import org.apache.ibatis.mapping.MappedStatement;
+import org.apache.ibatis.scripting.xmltags.SqlNode;
 import tk.mybatis.mapper.mapperhelper.MapperHelper;
 import tk.mybatis.mapper.mapperhelper.MapperTemplate;
 import tk.mybatis.mapper.mapperhelper.SqlHelper;
