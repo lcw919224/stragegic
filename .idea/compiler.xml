@@ -17,10 +17,11 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="strategic-admin" options="" />
+      <module name="strategic-admin" options="-parameters" />
       <module name="strategic-common" options="" />
-      <module name="strategic-service" options="" />
-      <module name="strategic-start" options="" />
+      <module name="strategic-conmon" options="-parameters" />
+      <module name="strategic-service" options="-parameters" />
+      <module name="strategic-start" options="-parameters" />
     </option>
   </component>
 </project>

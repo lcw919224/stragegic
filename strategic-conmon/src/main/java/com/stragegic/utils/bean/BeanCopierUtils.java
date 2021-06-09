@@ -1,9 +1,7 @@
 package com.stragegic.utils.bean;
 
 
-
-import net.sf.cglib.beans.BeanCopier;
-
+import org.springframework.cglib.beans.BeanCopier;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.List;

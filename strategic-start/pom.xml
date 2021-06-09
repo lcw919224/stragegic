@@ -11,16 +11,6 @@
 
     <artifactId>strategic-start</artifactId>
 
-    <dependencies>
-
-
-        <dependency>
-            <groupId>com.strategic</groupId>
-            <artifactId>strategic-admin</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-    </dependencies>
 
     <build>
         <plugins>
