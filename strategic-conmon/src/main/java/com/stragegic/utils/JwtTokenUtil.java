@@ -1,33 +1,41 @@
-package com.stragegic.utils.jwt;
+package com.stragegic.utils;
 
-import com.stragegic.service.user.entity.SUser;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * JwtToken生成的工具类
+ * JWT token的格式：header.payload.signature
+ * header的格式（算法、token的类型）：
+ * {"alg": "HS512","typ": "JWT"}
+ * payload的格式（用户名、创建时间、生成时间）：
+ * {"sub":"wang","created":1489079981393,"exp":1489684781}
+ * signature的生成算法：
+ * HMACSHA512(base64UrlEncode(header) + "." +base64UrlEncode(payload),secret)
+ * Created by macro on 2018/4/26.
+ */
 @Component
 public class JwtTokenUtil {
-
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtTokenUtil.class);
     private static final String CLAIM_KEY_USERNAME = "sub";
     private static final String CLAIM_KEY_CREATED = "created";
-
     @Value("${jwt.secret}")
     private String secret;
     @Value("${jwt.expiration}")
     private Long expiration;
 
     /**
-     * 根据f负载生成JWT的token
+     * 根据负责生成JWT的token
      */
     private String generateToken(Map<String, Object> claims) {
         return Jwts.builder()
@@ -38,23 +46,26 @@ public class JwtTokenUtil {
     }
 
     /**
-     * 生成token的过期时间
-     */
-    private Date generateExpirationDate() {
-        return new Date(System.currentTimeMillis() + expiration * 1000);
-    }
-
-    /**
      * 从token中获取JWT中的负载
      */
     private Claims getClaimsFromToken(String token) {
         Claims claims = null;
         try {
-            claims = Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
+            claims = Jwts.parser()
+                    .setSigningKey(secret)
+                    .parseClaimsJws(token)
+                    .getBody();
         } catch (Exception e) {
-            LOGGER.info("JWT格式验证失败:{}", token);
+            LOGGER.info("JWT格式验证失败:{}",token);
         }
         return claims;
+    }
+
+    /**
+     * 生成token的过期时间
+     */
+    private Date generateExpirationDate() {
+        return new Date(System.currentTimeMillis() + expiration * 1000);
     }
 
     /**
@@ -64,7 +75,7 @@ public class JwtTokenUtil {
         String username;
         try {
             Claims claims = getClaimsFromToken(token);
-            username = claims.get("CLAIM_KEY_USERNAME").toString();
+            username =  claims.getSubject();
         } catch (Exception e) {
             username = null;
         }
@@ -74,12 +85,12 @@ public class JwtTokenUtil {
     /**
      * 验证token是否还有效
      *
-     * @param token 客户端传入的token
-     * @param user  从数据库中查询出来的用户信息
+     * @param token       客户端传入的token
+     * @param userDetails 从数据库中查询出来的用户信息
      */
-    public boolean validateToken(String token, SUser user) {
+    public boolean validateToken(String token, UserDetails userDetails) {
         String username = getUserNameFromToken(token);
-        return username.equals(user.getName()) && !isTokenExpired(token);
+        return username.equals(userDetails.getUsername()) && !isTokenExpired(token);
     }
 
     /**
@@ -101,10 +112,9 @@ public class JwtTokenUtil {
     /**
      * 根据用户信息生成token
      */
-    public String generateToken(SUser user) {
+    public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
-        claims.put(CLAIM_KEY_USERNAME, user.getName());
-        claims.put("user", user);
+        claims.put(CLAIM_KEY_USERNAME, userDetails.getUsername());
         claims.put(CLAIM_KEY_CREATED, new Date());
         return generateToken(claims);
     }
@@ -124,18 +134,4 @@ public class JwtTokenUtil {
         claims.put(CLAIM_KEY_CREATED, new Date());
         return generateToken(claims);
     }
-
-
-    @Test
-    public void demo() {
-        SUser user = new SUser();
-        user.setName("");
-        user.setId(1L);
-        user.setTel("15180970047");
-        String token = generateToken(user);
-        System.out.println(token);
-        String name = getUserNameFromToken(token);
-        System.out.println(name);
-    }
 }
-
