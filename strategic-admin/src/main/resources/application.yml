@@ -1,0 +1,5 @@
+spring:
+  jta:
+    bitronix:
+      properties:
+        log-part1-filename:
