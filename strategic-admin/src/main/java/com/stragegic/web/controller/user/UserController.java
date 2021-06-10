@@ -19,7 +19,7 @@ import java.util.List;
 
 @Api(tags = "用户模块")
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/v1/user")
 public class UserController {
 
     @Autowired

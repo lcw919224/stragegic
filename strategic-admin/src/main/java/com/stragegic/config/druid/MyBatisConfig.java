@@ -19,7 +19,7 @@ import javax.sql.DataSource;
  * @author ruoyi
  */
 @Configuration
-@MapperScan(basePackages = {"com.*.service.*.mapper"}, sqlSessionTemplateRef = "sqlSessionTemplate")
+@MapperScan(basePackages = {"com.*.service."}, sqlSessionTemplateRef = "sqlSessionTemplate")
 public class MyBatisConfig {
 
     @Bean(name = "masterSqlSessionFactory")

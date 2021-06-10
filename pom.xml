@@ -40,6 +40,8 @@
         <spring-cloud-alibaba.version>2.5.0</spring-cloud-alibaba.version>
         <hutool.version>5.3.8</hutool.version>
         <jackson-databind.version>2.5.3</jackson-databind.version>
+        <jjwt.version>0.9.0</jjwt.version>
+        <spring-security-oauth2-autoconfigure.version>2.5.0</spring-security-oauth2-autoconfigure.version>
     </properties>
 
     <dependencyManagement>
@@ -87,12 +89,24 @@
                 <version>${knife4j.version}</version>
             </dependency>
 
-
             <!-- 阿里JSON解析器 -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+
+            <!--JWT(Json Web Token)登录支持-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security.oauth.boot</groupId>
+                <artifactId>spring-security-oauth2-autoconfigure</artifactId>
+                <version>${spring-security-oauth2-autoconfigure.version}</version>
             </dependency>
 
         </dependencies>
