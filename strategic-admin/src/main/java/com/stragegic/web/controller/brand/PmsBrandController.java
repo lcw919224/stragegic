@@ -1,8 +1,8 @@
 package com.stragegic.web.controller.brand;
 
 import com.stragegic.api.CommonResult;
-import com.stragegic.service.user.entity.PmsBrand;
-import com.stragegic.service.user.service.PmsBrandService;
+import com.stragegic.brand.entity.PmsBrand;
+import com.stragegic.brand.service.PmsBrandService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;

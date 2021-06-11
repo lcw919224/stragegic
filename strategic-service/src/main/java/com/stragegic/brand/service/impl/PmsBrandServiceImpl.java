@@ -1,9 +1,9 @@
-package com.stragegic.service.user.service.impl;
+package com.stragegic.brand.service.impl;
 
 
-import com.stragegic.service.user.entity.PmsBrand;
-import com.stragegic.service.user.mapper.PmsBrandMapper;
-import com.stragegic.service.user.service.PmsBrandService;
+import com.stragegic.brand.entity.PmsBrand;
+import com.stragegic.brand.mapper.PmsBrandMapper;
+import com.stragegic.brand.service.PmsBrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

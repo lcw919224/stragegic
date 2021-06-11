@@ -12,14 +12,13 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 import javax.sql.DataSource;
 
-
 /**
  * Mybatis支持*匹配扫描包
  *
  * @author ruoyi
  */
 @Configuration
-@MapperScan(basePackages = {"com.*.service."}, sqlSessionTemplateRef = "sqlSessionTemplate")
+@MapperScan(basePackages = {"com.stragegic.**"}, sqlSessionTemplateRef = "sqlSessionTemplate")
 public class MyBatisConfig {
 
     @Bean(name = "masterSqlSessionFactory")

@@ -1,6 +1,6 @@
-package com.stragegic.service.user.service;
+package com.stragegic.brand.service;
 
-import com.stragegic.service.user.entity.PmsBrand;
+import com.stragegic.brand.entity.PmsBrand;
 
 /**
  * PmsBrandService

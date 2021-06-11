@@ -39,6 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/data/**",
                         "/oauth/**",
                         "/login/**",
+/*                        "/system/login/**",*/
                         "/logout/**",
                         "/test/**",
                         "/swaggger-ui.html",

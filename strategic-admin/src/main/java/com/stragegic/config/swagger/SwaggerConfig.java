@@ -67,18 +67,15 @@ public class SwaggerConfig {
                 .securityContexts(securityContexts)
                 .securitySchemes(securitySchemes)
                 .apiInfo(apiInfo());
-
-
     }
 
 
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("strat服务api")
+                .title("strategic服务api")
                 .version("1.0")
                 .build();
     }
-
 
 }

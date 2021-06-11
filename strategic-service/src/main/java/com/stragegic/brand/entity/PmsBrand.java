@@ -1,4 +1,4 @@
-package com.stragegic.service.user.entity;
+package com.stragegic.brand.entity;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -6,7 +6,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-public class PmsBrand implements Serializable {
+public class PmsBrand {
     private Long id;
 
     private String name;
