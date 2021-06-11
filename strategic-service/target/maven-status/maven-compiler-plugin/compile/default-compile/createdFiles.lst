@@ -1,0 +1,8 @@
+com\stragegic\brand\service\impl\PmsBrandServiceImpl.class
+com\stragegic\brand\entity\PmsBrand.class
+com\stragegic\brand\service\PmsBrandService.class
+com\stragegic\system\service\UserAdminService.class
+com\stragegic\system\entity\UserAdmin.class
+com\stragegic\brand\mapper\PmsBrandMapper.class
+com\stragegic\system\mapper\UserAdminMapper.class
+com\stragegic\system\service\impl\UserAdminServiceImpl.class
